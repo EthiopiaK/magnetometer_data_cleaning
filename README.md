@@ -1,2 +1,3 @@
 # magnetometer_data_cleaning
 This script batch-processes daily magnetometer files to remove instrument noise (99999) using linear interpolation. It preserves file metadata and automatically generates a separate output folder for the processed files. Users must manually update the input directory path and may need to adjust the number of header rows to skip depending on their metadata structure. A sample data file is included for testing.
+Known Limitation: The script currently interpolates across gaps of any length, which can inadvertently erase  5- to 10-minute Geomagnetic Disturbances (GMDs). A future update will limit consecutive interpolations to a maximum of 5 minutes.
